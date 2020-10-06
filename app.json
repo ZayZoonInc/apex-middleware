@@ -1,0 +1,28 @@
+{
+  "name": "ZayZoon APEX Middleware",
+  "description": "This app allows APEX Bureaus to restrict ZayZoon API access.",
+  "website": "https://www.zayzoon.com",
+  "repository": "https://github.com/ZayZoonInc/apex-middleware",
+  "env": {
+    "AUTHORIZED_IPS": {
+      "description": "A list of ZayZoon IP Addresses separated by commas.",
+      "value": "1.1.1.1, 2.2.2.2"
+    },
+    "AUTHORIZED_CLIENT_IDS": {
+      "description": "A list of APEX Client IDs ZayZoon is authorized to access. Separated by commas.",
+      "value": "example1, example2"
+    },
+    "APEX_CLIENT_ID": {
+      "description": "APEX API Client ID (username).",
+      "value": "username"
+    },
+    "APEX_CLIENT_SECRET": {
+      "description": "APEX API Client Secret (password).",
+      "value": "secret"
+    },
+    "ZAYZOON_API_KEY": {
+      "description": "API Key for ZayZoon to access the middlware.",
+      "value": "secret"
+    }
+  }
+}
