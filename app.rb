@@ -18,7 +18,7 @@ def authorized_ip?
 end
 
 def authorized_api_key?
-  unless request["Authorization"] == "Bearer #{API_KEY}"
+  unless env["HTTP_AUTHORIZATION"] == "Bearer #{API_KEY}"
     halt 401, 'Unauthorized API Key'
   end
 end
