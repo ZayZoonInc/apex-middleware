@@ -52,6 +52,12 @@ namespace '/v1/companies/:client_id' do
     body r_body
   end
 
+  get '/short' do
+    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    status r_status
+    body r_body
+  end
+
   get '/employees/:employee_id' do
     r_status, r_body = ApexApi.new.get_data(request.path_info)
     status r_status
