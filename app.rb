@@ -46,7 +46,7 @@ namespace '/v1/companies/:client_id' do
     authorized_client?
   end
 
-  get '/short' do
+  get '' do
     r_status, r_body = ApexApi.new.get_data(request.path_info)
     status r_status
     body r_body
