@@ -59,7 +59,7 @@ namespace '/v1/companies/:client_id' do
   end
 
   get '/employees' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
