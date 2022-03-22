@@ -47,43 +47,43 @@ namespace '/v1/companies/:client_id' do
   end
 
   get '' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
 
   get '/short' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
 
   get '/employees' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
 
   get '/employees/:employee_id' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
 
   get '/employees/:employee_id/paystubs' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
 
   get '/employees/:employee_id/paystubs/:payroll_record_id/totals' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
 
   get '/employees/:employee_id/paystubs/:payroll_record_id/deductions/:pay_date' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
@@ -95,7 +95,7 @@ namespace '/v2/companies/:client_id/employees/:employee_id/deductions' do
   end
 
   get '' do
-    r_status, r_body = ApexApi.new.get_data(request.path_info)
+    r_status, r_body = ApexApi.new.get_data(request.fullpath)
     status r_status
     body r_body
   end
@@ -103,7 +103,7 @@ namespace '/v2/companies/:client_id/employees/:employee_id/deductions' do
   post '' do
     request.body.rewind  # in case someone already read it
     data = request.body.read
-    r_status, r_body = ApexApi.new.post_data(request.path_info, data)
+    r_status, r_body = ApexApi.new.post_data(request.fullpath, data)
     status r_status
     body r_body
   end
@@ -111,7 +111,7 @@ namespace '/v2/companies/:client_id/employees/:employee_id/deductions' do
   put '/:deduction_id' do
     request.body.rewind  # in case someone already read it
     data = request.body.read
-    r_status, r_body = ApexApi.new.put_data(request.path_info, data)
+    r_status, r_body = ApexApi.new.put_data(request.fullpath, data)
     status r_status
     body r_body
   end
