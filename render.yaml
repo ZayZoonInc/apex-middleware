@@ -1,0 +1,23 @@
+services:
+  # A web service on the Ruby native runtime
+  - type: web
+    runtime: ruby
+    plan: free
+    name: ZayZoon APEX Middleware
+    repo: https://github.com/zayzooninc/apex-middleware # Default: Repo containing render.yaml
+    buildCommand: bundle install
+    startCommand: bundle exec ruby app.rb
+    ipAllowList:
+      - source: 203.0.113.4/30
+        description: office # optional
+      - source: 198.51.100.1
+    envVars: # Environment variables
+      - key: AUTHORIZED_IPS
+        sync: false # Prompt for a value in the Render Dashboard
+      - key: AUTHORIZED_CLIENT_IDS
+      - key: APEX_CLIENT_ID
+        sync: false # Prompt for a value in the Render Dashboard
+      - key: APEX_CLIENT_SECRET
+        sync: false # Prompt for a value in the Render Dashboard
+      - key: ZAYZOON_API_KEY
+        sync: false # Prompt for a value in the Render Dashboard
