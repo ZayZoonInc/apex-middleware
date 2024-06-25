@@ -7,10 +7,6 @@ services:
     repo: https://github.com/zayzooninc/apex-middleware # Default: Repo containing render.yaml
     buildCommand: bundle install
     startCommand: bundle exec ruby app.rb
-    ipAllowList:
-      - source: 203.0.113.4/30
-        description: office # optional
-      - source: 198.51.100.1
     envVars: # Environment variables
       - key: AUTHORIZED_IPS
         sync: false # Prompt for a value in the Render Dashboard
