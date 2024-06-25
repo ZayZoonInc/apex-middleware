@@ -23,6 +23,9 @@ GEM
       rack (>= 3.0.0, < 4)
     rack-session (2.0.0)
       rack (>= 3.0.0)
+    rackup (2.1.0)
+      rack (>= 3)
+      webrick (~> 1.8)
     ruby2_keywords (0.0.5)
     sinatra (4.0.0)
       mustermann (~> 3.0)
@@ -37,6 +40,7 @@ GEM
       sinatra (= 4.0.0)
       tilt (~> 2.0)
     tilt (2.3.0)
+    webrick (1.8.1)
     zache (0.13.1)
 
 PLATFORMS
@@ -45,6 +49,7 @@ PLATFORMS
 DEPENDENCIES
   httparty
   puma
+  rackup (~> 2.1)
   sinatra
   sinatra-contrib
   zache
