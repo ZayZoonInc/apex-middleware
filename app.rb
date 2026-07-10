@@ -183,7 +183,7 @@ class ApexApi
         Authorization: "Basic #{Base64.strict_encode64("#{CLIENT_ID}:#{CLIENT_SECRET}")}"
       },
       body: {
-        grant_type: 'client_credentials'
+        grant_type: "client_credentials"
       }
     )
 
